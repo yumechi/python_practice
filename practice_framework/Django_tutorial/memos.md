@@ -43,7 +43,27 @@ nodeとかphpみたいに簡易サーバーを立ち上げるコマンドがあ�
 
 ![起動した様子](./memo_image/first_time_start_server.png)
 
+ポート番号指定して起動することも可能。
+`python manage.py runserver 8080`
+
+サーバーのIPを指定する場合は、ポート番号も一緒に指定する。
+`python manage.py runserver 0:8080`
+
+※ ここでの0は0.0.0.0のショートカット
+詳細はココを見る [https://docs.djangoproject.com/ja/1.11/ref/django-admin/#django-admin-runserver](https://docs.djangoproject.com/ja/1.11/ref/django-admin/#django-admin-runserver)
+
+デフォルトで `127.0.0.1` で立ち上がるとか書いてある。
+DjangoはWebフレームワークであって、サーバーではないですよ、本番環境は別のサーバーに乗せてあげてね、とある。
+
 寄り道：faviconを表示してみたい。
+-> StackOverFlowに書いてある記事を参考にしてみたけど、上手くいかなかったのでissue行き。
+-> 開発サーバー起動だと、静的ファイルのアクセスに制限があるっぽい。詳細は個々を見る〜とか書いてあるドキュメント内に記載がある。
+
+## Polls アプリケーションを作る
+
+プロジェクトの中に、アプリケーションは複数含めることが出来る。
+アプリケーションは1機能、プロジェクトは設定とアプリケーションを集めたもの、という認識があるため。
+
 
 
 
