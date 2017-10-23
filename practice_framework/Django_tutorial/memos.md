@@ -64,6 +64,22 @@ DjangoはWebフレームワークであって、サーバーではないです�
 プロジェクトの中に、アプリケーションは複数含めることが出来る。
 アプリケーションは1機能、プロジェクトは設定とアプリケーションを集めたもの、という認識があるため。
 
+というわけで、pollsを作ります。
+`python manage.py startapp polls`
 
+### viewを作る
 
+`polls/views.py` を編集する。ビューを呼ぶためにはURLの対応付が必要。
+対応付にはURLconf(urls.py）ファイルを作る必要がある。
+`polls/urls.py` を編集する。その後、polls.urls モジュールの記述反映のため、`mysite/urls.py` に `django.conf.urls.include` のimportを追加する。 `urlpatterns` のリストに `include()` を挿入する。
+
+*このあたり、丸写しだけど定型文なんだろうか？*
+
+`'^polls/'` のように末尾にスラッシュを必ず付けておくこと。
+Djangoは、include() をみて、一致したURLを切り落としてincludeされたURLConfへ一致したURL部分を落として次の処理へ渡す
+-> この部分、URL変更とかに強くて、とても賢い…！
+
+`admin.site.urls` だけは唯一の例外。
+
+明日は url() 引数辺りから続きやる。
 
