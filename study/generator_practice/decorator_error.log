@@ -1,0 +1,10 @@
+ERROR:root:Traceback (most recent call last):
+  File "decorator.py", line 28, in fail_run
+    @nai_decorate
+NameError: name 'nai_decorate' is not defined
+
+ERROR:root:name 'nai_decorate' is not defined
+Traceback (most recent call last):
+  File "decorator.py", line 28, in fail_run
+    @nai_decorate
+NameError: name 'nai_decorate' is not defined
