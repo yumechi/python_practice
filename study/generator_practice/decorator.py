@@ -36,6 +36,31 @@ def fail_run():
         logging.error(traceback.format_exc())
         logging.exception(e)
 
+def run2():
+    def add_two(f):
+        def new_f(*args, **kwds):
+            result = f(*args, **kwds)
+            return result + 2
+        return new_f
+
+    def add_three(f):
+        def new_f(*args, **kwds):
+            result = f(*args, **kwds)
+            return result + 3
+        return new_f
+
+
+    @add_two
+    def func():
+        return 1224
+    print(func())
+
+    @add_three
+    def func():
+        return 1234
+    print(func())
+
 if __name__ == '__main__':
     run()
-    fail_run()
+    # fail_run()
+    run2()
