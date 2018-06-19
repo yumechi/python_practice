@@ -30,6 +30,7 @@ def get_week_date(mode='s', **kward):
 
     params = dict()
     params['order'] = kward.get('order', 1)
+    params['count'] = kward.get('count', 10)
     start_date = dt.now()
     if kward.get('start_date'):
         sd = kward.get('start_date')
