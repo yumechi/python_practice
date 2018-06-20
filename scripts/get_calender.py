@@ -23,6 +23,16 @@ def getMode(mode='s'):
             'etc': 's',
             }
 
+
+template = """
+勉強会タイトル {title}
+場所 {place}
+説明 {description}
+時間 {started_at} - {ended_at}
+url {event_url}
+"""
+
+
 def get_week_date(mode='s', **kward):
     from datetime import datetime as dt, timedelta
 
@@ -46,6 +56,7 @@ def get_week_date(mode='s', **kward):
             print('start_dateはstring, datetimeのどちらかでお願いします。')
             raise TypeError
     
+    print_seperetor = '####################################################'
     for i in range(7):
         date_delta = timedelta(days=i)
         d = start_date + date_delta
@@ -60,8 +71,7 @@ def get_week_date(mode='s', **kward):
 
         if kward.get('debug'):
             print(access_point)
-            print('####################################################')
-            print('####################################################')
+            print(print_seperetor)
             print()
             continue
         
@@ -69,8 +79,10 @@ def get_week_date(mode='s', **kward):
         stack = []
         for elem in responce['events']:
             elem['description'] = elem['description'][:100]
-            print('\n'.join(['{0}={1}'.format(k, v) for k, v in elem.items()]))
-            stack.append('\n'.join(['{0}={1}'.format(k, v) for k, v in elem.items()]) + '\n')
+            # print('\n'.join(['{0}={1}'.format(k, v) for k, v in elem.items()]))
+            # stack.append('\n'.join(['{0}={1}'.format(k, v) for k, v in elem.items()]) + '\n')
+            print(template.format(**elem))
+            stack.append('\n'.join([print_seperetor, template.format(**elem), print_seperetor]))
         
         with open(settings['dir'] + params['ymd'] + settings['etc'] + '.txt', 'w') as f:
             f.write('\n'.join(stack))
