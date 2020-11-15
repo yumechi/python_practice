@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python main.py -i input_dir -o output_dir
+python main.py -i input -o output
