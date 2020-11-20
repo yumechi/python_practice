@@ -18,4 +18,5 @@ def it_for_us(context):
 
 @step("we enjoy test!")
 def enjoy_test(context):
-    assert 42 is not False
+    assert bool(42) is not False
+    assert bool(0) is False
