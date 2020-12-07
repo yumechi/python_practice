@@ -1,7 +1,9 @@
 from typing import NamedTuple
+from dataclasses import dataclass
 
 
-class Idol(NamedTuple):
+@dataclass
+class Idol:
     name: str
     profile: str
 
