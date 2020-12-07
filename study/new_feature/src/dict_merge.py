@@ -1,7 +1,7 @@
-from typing import Dict
+from typing import Any
 
 
-def dict_merge(d1: Dict[str, any], d2: Dict[str, any]) -> Dict[str, any]:
+def dict_merge(d1: dict[str, Any], d2: dict[str, Any]) -> dict[str, Any]:
     return d1 | d2
 
 
