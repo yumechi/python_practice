@@ -6,6 +6,11 @@ from dataclasses import dataclass
 class Idol:
     name: str
     profile: str
+    brand: str = ""
+
+    def __post_init__(self):
+        if not self.brand:
+            self.brand = f"{self.name}'s original corde"
 
 
 class Live(NamedTuple):
@@ -21,6 +26,8 @@ class Live(NamedTuple):
 
 if __name__ == "__main__":
     raara = Idol(name="raara", profile="kashikoma Idol")
-    mirei = Idol(name="mirei", profile="pripri Idol")
+    mirei = Idol(name="mirei", profile="pripri Idol", brand="CandyAlamode")
     today_live = Live(title="Bold SUMMER ADVENTURE", member=[raara, mirei])
     print(today_live.summary())
+    print(raara.brand)
+    print(mirei.brand)
