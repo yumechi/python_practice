@@ -1,12 +1,25 @@
-[tool.black]
-line-length = 79
-target-version = ['py38']
-include = '\.pyi?$'
-exclude = '''
-/(
-  \.eggs
-  | \.git
-  | \.mypy_cache
-  | \.venv
-)/
-'''
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[project]
+name = "try_fastapi"
+version = "0.1.0"
+description = "A FastAPI project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi",
+  "uvicorn['standard']",
+  "pydantic['email']",
+  "python-multipart",
+]
+
+[tool.uv]
+dev-dependencies = [
+  "ruff"
+]
+
+[scripts]
+start = "uvicorn main:app --reload"
