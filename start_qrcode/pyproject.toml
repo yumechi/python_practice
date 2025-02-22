@@ -1,0 +1,19 @@
+[project]
+name = "my-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "qrcode[pil]"
+]
+
+[tool.uv]
+dev-dependencies = [
+  "ruff",
+  "mypy"
+]
+
+[scripts]
+mypy = "mypy --config-file ./mypy.ini"
+ruff = "ruff ."
