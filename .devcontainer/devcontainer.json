@@ -1,0 +1,21 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "enkia.tokyo-night",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Tokyo Night",
+        "github.copilot.enable": {
+          "markdown": true
+        }
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/uv:1": {}
+  }
+}
