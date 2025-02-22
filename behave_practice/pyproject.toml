@@ -1,12 +1,22 @@
-[tool.black]
-line-length = 80
-target-version = ['py38']
-include = '\.pyi?$'
-exclude = '''
-/(
-  \.eggs
-  | \.git
-  | \.mypy_cache
-  | \.venv
-)/
-'''
+
+[project]
+name = "my-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "uvicorn",
+  "behave",
+]
+
+[tool.uv]
+dev-dependencies = [
+  "ruff",
+  "mypy",
+]
+
+[scripts]
+behave = "behave"
+mypy = "mypy --config-file ./mypy.ini"
+ruff = "ruff ."
