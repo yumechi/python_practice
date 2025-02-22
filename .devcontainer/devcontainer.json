@@ -14,8 +14,9 @@
         }
       }
     }
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/uv:1": {}
   }
+  // 公式提供がまだされていないためコメントアウト
+  // "features": {
+  //   "ghcr.io/devcontainers/features/uv:1": {}
+  // }
 }
