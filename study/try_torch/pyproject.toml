@@ -2,7 +2,7 @@
 name = "try-torch"
 version = "0.1.0"
 description = "PyTorch learning practice"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
     "torch",
     "torchvision",
@@ -12,7 +12,6 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "black",
     "mypy", 
     "ruff",
 ]
@@ -24,13 +23,14 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["example"]
 
-[tool.black]
-line-length = 79
-target-version = ['py39']
 
 [tool.ruff]
 line-length = 79
-target-version = "py39"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "B", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
