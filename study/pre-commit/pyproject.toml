@@ -1,16 +1,18 @@
 [project]
-name = "new-feature-practice"
+name = "pre-commit"
 version = "0.1.0"
-description = "Python new feature practice"
-readme = "README.md"
+description = "Pre-commit hooks practice"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "requests",
+]
 
 [project.optional-dependencies]
 dev = [
-    "black",
-    "mypy",
     "pytest",
+    "pytest-mock",
+    "black",
+    "mypy", 
     "ruff",
 ]
 
@@ -24,15 +26,6 @@ packages = ["src"]
 [tool.black]
 line-length = 79
 target-version = ['py39']
-include = '\.pyi?$'
-exclude = '''
-/(
-  \.eggs
-  | \.git
-  | \.mypy_cache
-  | \.venv
-)/
-'''
 
 [tool.ruff]
 line-length = 79
