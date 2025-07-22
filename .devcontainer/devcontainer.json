@@ -1,5 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,7 +17,8 @@
         }
       }
     }
-  }
+  },
+  "postCreateCommand": "mise trust -a && mise install"
   // 公式提供がまだされていないためコメントアウト
   // "features": {
   //   "ghcr.io/devcontainers/features/uv:1": {}
