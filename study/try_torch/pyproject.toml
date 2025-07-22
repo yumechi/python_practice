@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "PyTorch learning practice"
 requires-python = ">=3.12"
 dependencies = [
-    "torch",
-    "torchvision",
     "numpy",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
 ]
 
 [project.optional-dependencies]
